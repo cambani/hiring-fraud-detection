@@ -1,1 +1,6 @@
-Flaskscikit-learnjoblibgunicornnumpypandas
+Flask,
+scikit-learn,
+joblib,
+gunicorn,
+numpy,
+pandas
