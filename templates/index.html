@@ -3,46 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiring Fraud Detection</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Hiring Fraud Detection System</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Hiring Fraud Detection</h2>
-        <form action="/predict" method="post">
-            <div class="form-group">
-                <label for="qualification_match">Qualification Match:</label>
-                <select name="qualification_match" id="qualification_match">
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="experience_years">Experience Years:</label>
-                <input type="text" name="experience_years" id="experience_years">
-            </div>
-            <div class="form-group">
-                <label for="interview_rounds">Interview Rounds:</label>
-                <input type="text" name="interview_rounds" id="interview_rounds">
-            </div>
-            <div class="form-group">
-                <label for="time_to_hire_days">Time to Hire (Days):</label>
-                <input type="text" name="time_to_hire_days" id="time_to_hire_days">
-            </div>
-            <div class="form-group">
-                <label for="referral_connection">Referral Connection:</label>
-                <select name="referral_connection" id="referral_connection">
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="salary_increase_percent">Salary Increase (%):</label>
-                <input type="text" name="salary_increase_percent" id="salary_increase_percent">
-            </div>
+        <header>
+            <h1>Hiring Fraud Detection System</h1>
+            <p>Analyze hiring data to detect fraudulent recruitment practices.Developed by Chris 2025.</p>
+        </header>
+
+        <form id="fraudForm">
+            <label>Qualification Match:</label>
+            <select name="qualification_match">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Experience Years:</label>
+            <input type="number" name="experience_years" required>
+
+            <label>Interview Rounds:</label>
+            <input type="number" name="interview_rounds" required>
+
+            <label>Time to Hire (Days):</label>
+            <input type="number" name="time_to_hire_days" required>
+
+            <label>Referral Connection:</label>
+            <select name="referral_connection">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Salary Increase (%):</label>
+            <input type="number" name="salary_increase_percent" required>
+
             <button type="submit">Predict</button>
         </form>
-        <h3>{{ prediction_text }}</h3>
+
+        <div id="prediction_result" class="result-container"></div>
     </div>
+
+    <script src="../static/script.js"></script>
 </body>
 </html>
